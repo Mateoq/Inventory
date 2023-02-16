@@ -1,0 +1,106 @@
+{
+  "folders": [
+    {
+			"name": "📦 Inventory",
+			"path": ".."
+		},
+		{
+			"name": "✨ @Inventory/client",
+			"path": "../apps/client"
+		},
+		{
+			"name": "🚀 @Inventory/services",
+			"path": "../apps/services"
+		}
+  ],
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build Services",
+        "type": "shell",
+        "command": "./scripts/build.sh --dev",
+        "windows": {
+          "command": "scripts/build.bat --dev"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "dedicated",
+          "showReuseMessage": true
+        },
+        "problemMatcher": [],
+        "options": {
+          "cwd": "${workspaceFolder}/apps/services"
+        }
+      },
+      {
+        "label": "Build Client",
+        "type": "shell",
+        "command": "yarn build",
+        "windows": {
+          "command": "yarn build"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "dedicated",
+          "showReuseMessage": true
+        },
+        "problemMatcher": [],
+        "options": {
+          "cwd": "${workspaceFolder}/apps/client",
+        }
+      },
+      {
+        "label": "Build Containers",
+        "type": "shell",
+        "command": "./scripts/containers.sh --build",
+        "windows": {
+          "command": "scripts/containers.bat --build"
+        },
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": true,
+          "panel": "dedicated",
+          "showReuseMessage": true
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Run",
+        "type": "shell",
+        "command": "./scripts/containers.sh --run",
+        "windows": {
+          "command": "scripts/containers.bat --run"
+        },
+        "presentation": {
+          "echo": true,
+          "reveal": "always",
+          "focus": false,
+          "panel": "dedicated",
+          "showReuseMessage": true
+        },
+        "runOptions": {
+          "reevaluateOnRerun": true
+        }
+      }
+    ]
+  },
+  "settings": {}
+}

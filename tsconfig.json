@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+
+    "moduleResolution": "node",
+    "noEmitOnError": true,
+
+    "preserveConstEnums": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    "sourceMap": true,
+
+    "esModuleInterop": true,
+
+    "jsx": "react",
+
+    "skipLibCheck": true,
+    "watch": true,
+    "preserveWatchOutput": true,
+  }
+}

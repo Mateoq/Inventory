@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2019",
+    "lib": [
+      "es2020"
+    ],
+
+    "types": [
+      "node"
+    ],
+
+    "noEmitOnError": false,
+    "preserveConstEnums": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+
+    "sourceMap": true,
+
+    "esModuleInterop": true,
+
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    // "outDir": "/Users/mateoquintero/Projects/Personal/Mix/Noir/services_system/build"
+    "outDir": "../build",
+    "baseUrl": "../",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "../src/**/*.ts",
+    "/usr/app/src/**/*.ts"
+  ],
+  "exclude": [
+    "../node_modules",
+    "/usr/app/node_modules"
+  ]
+}
