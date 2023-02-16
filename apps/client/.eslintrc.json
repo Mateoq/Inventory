@@ -1,0 +1,21 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/no-unused-vars": ["error", {
+      "varsIgnorePattern": "^_$"
+    }],
+    "@typescript-eslint/no-empty-function": "off",
+    "eol-last": "error",
+    "semi": "error",
+    "comma-dangle": ["error", "never"],
+    "react/display-name": "off"
+  }
+}
