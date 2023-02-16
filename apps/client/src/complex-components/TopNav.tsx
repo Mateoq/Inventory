@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { BiMenu } from 'react-icons/bi';
+import { useRouter } from 'next/router';
 
 import Dropdown, { DropdownItem } from '@/basic-components/Dropdown';
 import Text from '@/basic-components/Text';
@@ -28,13 +29,13 @@ const MenuIcon = styled(BiMenu)`
 
 const TopNav: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
 
   const logoutHandler = async () => {
     const result = await dispatch(logout()).unwrap();
-    console.log('result', result);
 
     if (result.success) {
-      location.href = paths.AUTH;
+      router.replace(paths.AUTH);
     }
   };
 

@@ -12,7 +12,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   const configService = app.get(ConfigService);
-  const port = configService.get<number>('port') ?? 3000;
+  const port = configService.get<number>('PORT') ?? 3001;
 
   const config = new DocumentBuilder()
     .setTitle('Inventory API')

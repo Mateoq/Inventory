@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 
 import Button from '@/basic-components/Button';
 import Div from '@/basic-components/Div';
@@ -57,12 +58,13 @@ interface AuthInputs {
 
 const SignInForm: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const router = useRouter();
   const { register, handleSubmit, formState: { errors } } = useForm<AuthInputs>();
   const onSubmit: SubmitHandler<AuthInputs> = async (data) => {
     const loginResult = await dispatch(login({ email: data.email, password: data.password })).unwrap();
 
     if (loginResult) {
-      location.assign(paths.HOME);
+      router.replace(paths.HOME);
     } else {
       dispatch(openToast('Email or Password are incorrect'));
       await sleep(4000);

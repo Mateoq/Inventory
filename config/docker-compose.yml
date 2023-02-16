@@ -1,0 +1,23 @@
+version: '3.3'
+services:
+  inventory_services:
+    image: inventory_services:latest
+    build:
+      context: ../apps/services
+      dockerfile: config/Dockerfile
+    # volumes:
+    #   - ../apps/services/src:/usr/app/src
+    #   - ../apps/services/dist:/usr/app/dist
+    ports:
+      - 3001:3001
+  inventory_client:
+    image: inventory_client:latest
+    build:
+      context: ../apps/client
+      dockerfile: config/Dockerfile
+    # volumes:
+    #   - ../apps/client/src:/usr/app/src
+    ports:
+      - 3000:3000
+    links:
+      - "inventory_services:services"
